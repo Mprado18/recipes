@@ -4,18 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.recipes.databinding.FragmentRecipeDetailBinding
 
-class FragmentRecipeDetail : Fragment() {
+class FragmentRecipeDetail(private val position: Int) : Fragment() {
 
     private val recipeDetail: MutableList<RecipeItemDetail> = mutableListOf(
         RecipeItemDetail(R.string.recipe_detail),
         RecipeItemDetail(R.string.recipe_detail_3),
-        RecipeItemDetail(R.string.recipe_detail_2),
+        RecipeItemDetail(R.string.recipe_detail),
         RecipeItemDetail(R.string.recipe_detail_2),
         RecipeItemDetail(R.string.recipe_detail),
         RecipeItemDetail(R.string.recipe_detail_2),
@@ -41,10 +38,17 @@ class FragmentRecipeDetail : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
         _binding = FragmentRecipeDetailBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
+    }
+
+    override fun onActivityCreated(bundle: Bundle?) {
+        super.onActivityCreated(bundle)
+        bundle?.getInt("key")
+
+        //troca detalhe default por detalhes da receita clicada
+        binding.recipeDetail.text = context!!.getString(recipeDetail[position].detail)
     }
 
     override fun onDestroyView() {
