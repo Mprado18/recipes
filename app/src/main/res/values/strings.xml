@@ -2,33 +2,33 @@
     <string name="app_name">recipes</string>
     <string name="recipe">Receita</string>
     <string name="recipe_title">Receita - x</string>
-    <string name="recipe_detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n
-        \nAenean tristique consequat eros, in placerat purus porttitor vitae.\n
-        \nVivamus semper urna metus, ac faucibus risus condimentum vel.\n
-        \nIn interdum ipsum eu interdum efficitur.\n
-        \nSed molestie posuere interdum.\n
-        \nFusce bibendum urna eu ex elementum, a porttitor urna congue.\n
-        \nCras sit amet nibh ac magna ultrices.\n
-        \nNam ipsum, vulputate vel arcu nec, consectetur malesuada ligula.\n
-        \nAenean posuere et lorem a pretium.\n
-        \nMauris et fermentum ligula.\n
-        \nEtiam venenatis at sem eu laoreet.</string>
+    <string name="recipe_detail">1- Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n
+        \n2- Aenean tristique consequat eros, in placerat purus porttitor vitae.\n
+        \n3- Vivamus semper urna metus, ac faucibus risus condimentum vel.\n
+        \n4- In interdum ipsum eu interdum efficitur.\n
+        \n5- Sed molestie posuere interdum.\n
+        \n6- Fusce bibendum urna eu ex elementum, a porttitor urna congue.\n
+        \n7- Cras sit amet nibh ac magna ultrices.\n
+        \n8- Nam ipsum, vulputate vel arcu nec, consectetur malesuada ligula.\n
+        \n9- Aenean posuere et lorem a pretium.\n
+        \n10- Mauris et fermentum ligula.\n
+        \n11- Etiam venenatis at sem eu laoreet.</string>
     <string name="recipe_detail_2">
-        \nIn interdum ipsum eu interdum efficitur.\n
-        \nSed molestie posuere interdum.\n
-        \nFusce bibendum urna eu ex elementum, a porttitor urna congue.\n
-        \nCras sit amet nibh ac magna ultrices.\n
-        \nNam ipsum, vulputate vel arcu nec, consectetur malesuada ligula.\n
-        \nAenean posuere et lorem a pretium.\n
-        \nMauris et fermentum ligula.\n
-        \nEtiam venenatis at sem eu laoreet.</string>
+        \n1- In interdum ipsum eu interdum efficitur.\n
+        \n2- Sed molestie posuere interdum.\n
+        \n3- Fusce bibendum urna eu ex elementum, a porttitor urna congue.\n
+        \n4- Cras sit amet nibh ac magna ultrices.\n
+        \n5- Nam ipsum, vulputate vel arcu nec, consectetur malesuada ligula.\n
+        \n6- Aenean posuere et lorem a pretium.\n
+        \n7- Mauris et fermentum ligula.\n
+        \n8- Etiam venenatis at sem eu laoreet.</string>
     <string name="recipe_detail_3">
-        \nAenean tristique consequat eros, in placerat purus porttitor vitae.\n
-        \nVivamus semper urna metus, ac faucibus risus condimentum vel.\n
-        \nIn interdum ipsum eu interdum efficitur.\n
-        \nSed molestie posuere interdum.\n\n
-        \nCras sit amet nibh ac magna ultrices.\n
-        \nAenean posuere et lorem a pretium.\n
-        \nMauris et fermentum ligula.\n
-        \nEtiam venenatis at sem eu laoreet.</string>
+        \n1- Aenean tristique consequat eros, in placerat purus porttitor vitae.\n
+        \n2- Vivamus semper urna metus, ac faucibus risus condimentum vel.\n
+        \n3- In interdum ipsum eu interdum efficitur.\n
+        \n4- Sed molestie posuere interdum.\n\n
+        \n5- Cras sit amet nibh ac magna ultrices.\n
+        \n6- Aenean posuere et lorem a pretium.\n
+        \n7- Mauris et fermentum ligula.\n
+        \n8- Etiam venenatis at sem eu laoreet.</string>
 </resources>
