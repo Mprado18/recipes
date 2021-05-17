@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecipesListAdapter(
     private val context: Context,
-    private val recipesList: MutableList<Recipes>) :
+    private val recipesList: MutableList<Recipes>,
+    private val onClick: (Int) -> Unit) :
         RecyclerView.Adapter<RecipesListAdapter.RecipeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -20,32 +21,24 @@ class RecipesListAdapter(
             parent,
             false)
 
-        return RecipeViewHolder(view)
+        return RecipeViewHolder(view, onClick)
     }
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         holder.bindView(recipesList[position])
-
-        holder.itemView.setOnClickListener { v ->
-            val activity = v.context as AppCompatActivity
-            val fragmentDetail = FragmentRecipeDetail()
-
-            activity.supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment, fragmentDetail)
-                .addToBackStack(null)
-                .commit()
-
-            Toast.makeText(context, "item $position clicked", Toast.LENGTH_SHORT).show()
-        }
     }
 
     override fun getItemCount() = recipesList.size
 
-    class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class RecipeViewHolder(view: View, onClick: (Int) -> Unit) : RecyclerView.ViewHolder(view) {
         private val cookRecipeItemList: TextView = view.findViewById(R.id.cook_recipe)
 
         fun bindView(items: Recipes) {
             cookRecipeItemList.text = items.recipe
+        }
+
+        init {
+            view.setOnClickListener { onClick(adapterPosition) }
         }
     }
 }
