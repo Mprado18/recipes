@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipes.databinding.FragmentListBinding
@@ -43,19 +45,36 @@ class FragmentList : Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
             _binding = FragmentListBinding.inflate(inflater, container, false)
-            val view = binding.root
-            return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recyclerview: RecyclerView = binding.recyclerviewMain
-        recipesListAdapter = RecipesListAdapter(this.context!!, recipesList)
+        recipesListAdapter = RecipesListAdapter(this.context!!, recipesList) { position: Int ->
+//            Toast.makeText(context, "item $position clicked", Toast.LENGTH_SHORT).show()
+
+            showRecipeDetail(position)
+        }
         recyclerview.adapter = recipesListAdapter
         recyclerview.layoutManager = LinearLayoutManager(this.context)
 
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun showRecipeDetail(position: Int) {
+        val detail = FragmentRecipeDetail(position)
+        val bundle = bundleOf("key" to position)
+
+        detail.arguments = bundle
+
+        val test = view!!.context as AppCompatActivity
+
+        test.supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment, detail)
+                .addToBackStack(null)
+                .commit()
     }
 
     override fun onDestroyView() {
